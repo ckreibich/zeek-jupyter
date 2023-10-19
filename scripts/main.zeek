@@ -12,6 +12,9 @@ redef Log::default_rotation_dir = fmt("%s/%s", Installation::spool_dir, "logs");
 # Log in JSON by default.
 redef LogAscii::use_json = T;
 
+# Ignore checksums by default since we'll be capturing local packets a lot.
+redef ignore_checksums = T;
+
 # A rotation file formatter compatible with zeek-archiver.
 function archiver_rotation_format_func(ri: Log::RotationFmtInfo): Log::RotationPath {
 	local open_str = strftime(Log::default_rotation_date_format, ri$open);

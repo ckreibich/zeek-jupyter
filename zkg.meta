@@ -1,0 +1,16 @@
+[package]
+script_dir = scripts
+summary = Experimental Zeek scripts for Jupyter traffic analysis
+depends = 
+	zeek >=6.0.0
+
+[template]
+source = https://github.com/zeek/package-template
+version = v3.0.2
+zkg_version = 2.13.0-46
+features = license
+
+[template_vars]
+name = zeek-jupyter
+author = Christian Kreibich <christian@zeek.org>
+license = bsd-3

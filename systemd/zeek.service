@@ -1,0 +1,13 @@
+[Unit]
+Description=Zeek Network Monitor
+Documentation=man:zeek(8)
+After=network.target
+
+[Service]
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/zeek/bin
+ExecStart=/opt/zeek/bin/zeek -i lo zeek-jupyter
+WorkingDirectory=/opt/zeek/var/lib/run
+Restart=on-failure
+
+[Install]
+WantedBy=network-online.target
